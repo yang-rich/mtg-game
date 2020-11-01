@@ -1,6 +1,6 @@
 import React from "react";
 
-const Card = ({ player, name, playCard }) => {
+const Card = ({ name, playCard }) => {
   //   const [name, setName] = useState("");
   // include in ({}) to set as props
   if (playCard) {

@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "./Card";
+import "./Styles/card.css";
 
 const Player = ({
   deck,
@@ -12,39 +13,82 @@ const Player = ({
   attackCard,
   currentTurn,
   endTurn,
+  isPlayer1,
 }) => {
-  return (
+  if (!currentTurn) {
+    playCard = () => {};
+  }
+  const boardStuff = (
+    <div className="board">
+      {board.map((card) => (
+        <>
+          <Card key={card.name} />
+          <img className="card" src={card.imgUrl} alt={card.name} />
+        </>
+      ))}
+    </div>
+  );
+  const playerStuff = (
+    <>
+      <div className="hand">
+        {hand.map((card, i) => (
+          <>
+            <Card key={card.name} />
+            <img
+              className="card"
+              src={card.imgUrl}
+              alt={card.name}
+              onClick={() => playCard(i)}
+            />
+          </>
+        ))}
+      </div>
+    </>
+  );
+  const gameplayStuff = (
     <>
       {health}
       <br />
       {mana}
-      {hand.map((card) => (
-        <>
-          <Card name={card.name} key={card.name} playCard={playCard} />
-          <img src={card.imgUrl} alt={card.name} />
-        </>
-      ))}
       <br />
       {deck.length} cards left
       <br />
       {currentTurn && (
-        <>
-          <button onClick={drawCard}>draw</button>
+        <div className="actionMenu">
+          {/* <button onClick={drawCard}>draw</button> */}
           <br />
           <button onClick={attackCard}>Attack</button>
           <br />
-          <button onClick={endTurn}>End Turn</button>
-        </>
+          <button onClick={endTurn}>Pass / End Turn</button>
+        </div>
       )}
-      {board.map((card) => (
-        <>
-          <Card key={card.name} img={card.imgUrl} />
-          <img src={card.imgUrl} alt={card.name} />
-        </>
-      ))}
-      {console.log(board)}
     </>
   );
+  if (isPlayer1) {
+    return (
+      <>
+        {gameplayStuff}
+        Hand:
+        <br />
+        {playerStuff}
+        <br />
+        Board:
+        <br />
+        {boardStuff}
+      </>
+    );
+  } else {
+    return (
+      <>
+        Board:
+        {boardStuff}
+        <br />
+        Hand:
+        {playerStuff}
+        {gameplayStuff}
+      </>
+    );
+  }
 };
 
 export default Player;
@@ -64,3 +108,12 @@ export default Player;
 
 // thing || other
 // thing ? thing : other
+
+// onClick={() => playCard(i)}
+// when passing functions from parent to child, arrow functions allows us to pass i to the correct "context"
+// this playCard() knows game.js
+// the arrow version passes along context where "this" refers to game.js instead of player.js
+// use this instead of events
+
+//SOCKET IO STUFF
+//unrender hand for isPlayer1
