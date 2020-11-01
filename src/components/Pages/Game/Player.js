@@ -8,13 +8,14 @@ const Player = ({
   mana,
   hand,
   board,
-  drawCard,
+  dealCardForPlayer,
   playCard,
   attackCard,
   currentTurn,
-  endTurn,
+  endPlayerTurn,
   isPlayer1,
 }) => {
+  //if not your turn, disable playCard functionality by setting to empty function
   if (!currentTurn) {
     playCard = () => {};
   }
@@ -28,21 +29,41 @@ const Player = ({
       ))}
     </div>
   );
+  console.log(hand);
+  //this ternary handles cards face up or face down depending on active player
+  //intended to not show opposing player for now
+  //i in map lets us pick index for playCard();
   const playerStuff = (
     <>
-      <div className="hand">
-        {hand.map((card, i) => (
-          <>
-            <Card key={card.name} />
-            <img
-              className="card"
-              src={card.imgUrl}
-              alt={card.name}
-              onClick={() => playCard(i)}
-            />
-          </>
-        ))}
-      </div>
+      {
+        <div className="hand">
+          {hand.map((card, i) => (
+            <>
+              <Card key={card.name} />
+              <img
+                className="card"
+                src={card.imgUrl}
+                alt={card.name}
+                onClick={() => playCard(i)}
+              />
+            </>
+          ))}
+        </div>
+      }
+    </>
+  );
+  const computerStuff = (
+    <>
+      {
+        <div className="hand">
+          {hand.map((card, i) => (
+            <>
+              <Card key={card.name} />
+              <img className="card" src={card.backImgUrl} alt={card.name} />
+            </>
+          ))}
+        </div>
+      }
     </>
   );
   const gameplayStuff = (
@@ -55,22 +76,23 @@ const Player = ({
       <br />
       {currentTurn && (
         <div className="actionMenu">
-          {/* <button onClick={drawCard}>draw</button> */}
+          <button onClick={dealCardForPlayer}>draw</button>
           <br />
           <button onClick={attackCard}>Attack</button>
           <br />
-          <button onClick={endTurn}>Pass / End Turn</button>
+          <button onClick={endPlayerTurn}>Pass / End Turn</button>
         </div>
       )}
     </>
   );
   if (isPlayer1) {
+    //separated each part of game to separate components to re-order based on positioning (player board board player)
     return (
       <>
         {gameplayStuff}
         Hand:
         <br />
-        {playerStuff}
+        {computerStuff}
         <br />
         Board:
         <br />
