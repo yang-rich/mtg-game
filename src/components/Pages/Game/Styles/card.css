@@ -4,7 +4,6 @@
   /* border: 1px solid red; */
 }
 #root {
-  background-color: red;
   min-height: 100vh;
   margin: 0;
   padding: 0;
@@ -87,7 +86,7 @@
   position: absolute;
 }
 .computerHealthMana {
-  left: 140px;
+  left: 120px;
   color: red;
   font-size: 36px;
   font-weight: bold;

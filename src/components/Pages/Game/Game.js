@@ -208,9 +208,8 @@ export default Game;
 //TO-DO LIST
 ////////////////////////////////////
 
-//computer should attack
-//buttons dont work
 //computer logic to play cards depending on cmc
+//socket.io
 
 ////////////////////////////////////
 //FINISHED LIST
@@ -229,3 +228,5 @@ export default Game;
 //mana resets to max at the end of every turn or start?
 //mana generation on start of turn
 //win/loss condition
+//computer should attack
+//buttons dont work
