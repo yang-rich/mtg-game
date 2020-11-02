@@ -172,9 +172,6 @@ const Game = () => {
   return (
     <div>
       <Player {...computer} currentTurn={currentTurn === 2} isPlayer1={false} />
-      <br />
-      <br />
-      <br />
       <Player
         {...player}
         drawCard={() => {

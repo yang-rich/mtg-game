@@ -13,8 +13,7 @@ export default [
     power: 2,
     toughness: 2,
     imgUrl: "https://www.mtgpics.com/pics/big/25m/128.jpg",
-    backImgUrl:
-      "https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest/scale-to-width-down/250?cb=20140813141013",
+    backImgUrl: "https://i.ebayimg.com/images/g/l9YAAOSweW5VX2or/s-l300.jpg",
   },
   {
     id: 2,
@@ -30,8 +29,7 @@ export default [
     power: 2,
     toughness: 2,
     imgUrl: "https://www.mtgpics.com/pics/big/25m/128.jpg",
-    backImgUrl:
-      "https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest/scale-to-width-down/250?cb=20140813141013",
+    backImgUrl: "https://i.ebayimg.com/images/g/l9YAAOSweW5VX2or/s-l300.jpg",
   },
   {
     id: 3,
@@ -47,8 +45,7 @@ export default [
     power: 2,
     toughness: 2,
     imgUrl: "https://www.mtgpics.com/pics/big/25m/128.jpg",
-    backImgUrl:
-      "https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest/scale-to-width-down/250?cb=20140813141013",
+    backImgUrl: "https://i.ebayimg.com/images/g/l9YAAOSweW5VX2or/s-l300.jpg",
   },
   {
     id: 4,
@@ -64,8 +61,7 @@ export default [
     power: 2,
     toughness: 2,
     imgUrl: "https://www.mtgpics.com/pics/big/25m/128.jpg",
-    backImgUrl:
-      "https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest/scale-to-width-down/250?cb=20140813141013",
+    backImgUrl: "https://i.ebayimg.com/images/g/l9YAAOSweW5VX2or/s-l300.jpg",
   },
   {
     id: 5,
@@ -81,8 +77,7 @@ export default [
     power: 2,
     toughness: 2,
     imgUrl: "https://www.mtgpics.com/pics/big/zen/126.jpg",
-    backImgUrl:
-      "https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest/scale-to-width-down/250?cb=20140813141013",
+    backImgUrl: "https://i.ebayimg.com/images/g/l9YAAOSweW5VX2or/s-l300.jpg",
   },
   {
     id: 6,
@@ -98,8 +93,7 @@ export default [
     power: 2,
     toughness: 2,
     imgUrl: "https://www.mtgpics.com/pics/big/zen/126.jpg",
-    backImgUrl:
-      "https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest/scale-to-width-down/250?cb=20140813141013",
+    backImgUrl: "https://i.ebayimg.com/images/g/l9YAAOSweW5VX2or/s-l300.jpg",
   },
   {
     id: 7,
@@ -115,8 +109,7 @@ export default [
     power: 2,
     toughness: 2,
     imgUrl: "https://www.mtgpics.com/pics/big/zen/126.jpg",
-    backImgUrl:
-      "https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest/scale-to-width-down/250?cb=20140813141013",
+    backImgUrl: "https://i.ebayimg.com/images/g/l9YAAOSweW5VX2or/s-l300.jpg",
   },
   {
     id: 8,
@@ -132,8 +125,7 @@ export default [
     power: 2,
     toughness: 2,
     imgUrl: "https://www.mtgpics.com/pics/big/zen/126.jpg",
-    backImgUrl:
-      "https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest/scale-to-width-down/250?cb=20140813141013",
+    backImgUrl: "https://i.ebayimg.com/images/g/l9YAAOSweW5VX2or/s-l300.jpg",
   },
   {
     id: 9,
@@ -149,8 +141,7 @@ export default [
     power: 1,
     toughness: 2,
     imgUrl: "https://www.mtgpics.com/pics/big/ima/140.jpg",
-    backImgUrl:
-      "https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest/scale-to-width-down/250?cb=20140813141013",
+    backImgUrl: "https://i.ebayimg.com/images/g/l9YAAOSweW5VX2or/s-l300.jpg",
   },
   {
     id: 10,
@@ -166,8 +157,7 @@ export default [
     power: 1,
     toughness: 2,
     imgUrl: "https://www.mtgpics.com/pics/big/ima/140.jpg",
-    backImgUrl:
-      "https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest/scale-to-width-down/250?cb=20140813141013",
+    backImgUrl: "https://i.ebayimg.com/images/g/l9YAAOSweW5VX2or/s-l300.jpg",
   },
   {
     id: 11,
@@ -183,8 +173,7 @@ export default [
     power: 1,
     toughness: 2,
     imgUrl: "https://www.mtgpics.com/pics/big/ima/140.jpg",
-    backImgUrl:
-      "https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest/scale-to-width-down/250?cb=20140813141013",
+    backImgUrl: "https://i.ebayimg.com/images/g/l9YAAOSweW5VX2or/s-l300.jpg",
   },
   {
     id: 12,
@@ -200,8 +189,7 @@ export default [
     power: 1,
     toughness: 2,
     imgUrl: "https://www.mtgpics.com/pics/big/ima/140.jpg",
-    backImgUrl:
-      "https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest/scale-to-width-down/250?cb=20140813141013",
+    backImgUrl: "https://i.ebayimg.com/images/g/l9YAAOSweW5VX2or/s-l300.jpg",
   },
   {
     id: 1,
@@ -217,8 +205,7 @@ export default [
     power: 2,
     toughness: 2,
     imgUrl: "https://www.mtgpics.com/pics/big/25m/128.jpg",
-    backImgUrl:
-      "https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest/scale-to-width-down/250?cb=20140813141013",
+    backImgUrl: "https://i.ebayimg.com/images/g/l9YAAOSweW5VX2or/s-l300.jpg",
   },
   {
     id: 2,
@@ -234,8 +221,7 @@ export default [
     power: 2,
     toughness: 2,
     imgUrl: "https://www.mtgpics.com/pics/big/25m/128.jpg",
-    backImgUrl:
-      "https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest/scale-to-width-down/250?cb=20140813141013",
+    backImgUrl: "https://i.ebayimg.com/images/g/l9YAAOSweW5VX2or/s-l300.jpg",
   },
   {
     id: 3,
@@ -251,8 +237,7 @@ export default [
     power: 2,
     toughness: 2,
     imgUrl: "https://www.mtgpics.com/pics/big/25m/128.jpg",
-    backImgUrl:
-      "https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest/scale-to-width-down/250?cb=20140813141013",
+    backImgUrl: "https://i.ebayimg.com/images/g/l9YAAOSweW5VX2or/s-l300.jpg",
   },
   {
     id: 4,
@@ -268,8 +253,7 @@ export default [
     power: 2,
     toughness: 2,
     imgUrl: "https://www.mtgpics.com/pics/big/25m/128.jpg",
-    backImgUrl:
-      "https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest/scale-to-width-down/250?cb=20140813141013",
+    backImgUrl: "https://i.ebayimg.com/images/g/l9YAAOSweW5VX2or/s-l300.jpg",
   },
   {
     id: 5,
@@ -285,8 +269,7 @@ export default [
     power: 2,
     toughness: 2,
     imgUrl: "https://www.mtgpics.com/pics/big/zen/126.jpg",
-    backImgUrl:
-      "https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest/scale-to-width-down/250?cb=20140813141013",
+    backImgUrl: "https://i.ebayimg.com/images/g/l9YAAOSweW5VX2or/s-l300.jpg",
   },
   {
     id: 6,
@@ -302,8 +285,7 @@ export default [
     power: 2,
     toughness: 2,
     imgUrl: "https://www.mtgpics.com/pics/big/zen/126.jpg",
-    backImgUrl:
-      "https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest/scale-to-width-down/250?cb=20140813141013",
+    backImgUrl: "https://i.ebayimg.com/images/g/l9YAAOSweW5VX2or/s-l300.jpg",
   },
   {
     id: 7,
@@ -319,8 +301,7 @@ export default [
     power: 2,
     toughness: 2,
     imgUrl: "https://www.mtgpics.com/pics/big/zen/126.jpg",
-    backImgUrl:
-      "https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest/scale-to-width-down/250?cb=20140813141013",
+    backImgUrl: "https://i.ebayimg.com/images/g/l9YAAOSweW5VX2or/s-l300.jpg",
   },
   {
     id: 8,
@@ -336,8 +317,7 @@ export default [
     power: 2,
     toughness: 2,
     imgUrl: "https://www.mtgpics.com/pics/big/zen/126.jpg",
-    backImgUrl:
-      "https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest/scale-to-width-down/250?cb=20140813141013",
+    backImgUrl: "https://i.ebayimg.com/images/g/l9YAAOSweW5VX2or/s-l300.jpg",
   },
   {
     id: 9,
@@ -353,8 +333,7 @@ export default [
     power: 1,
     toughness: 2,
     imgUrl: "https://www.mtgpics.com/pics/big/ima/140.jpg",
-    backImgUrl:
-      "https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest/scale-to-width-down/250?cb=20140813141013",
+    backImgUrl: "https://i.ebayimg.com/images/g/l9YAAOSweW5VX2or/s-l300.jpg",
   },
   {
     id: 10,
@@ -370,8 +349,7 @@ export default [
     power: 1,
     toughness: 2,
     imgUrl: "https://www.mtgpics.com/pics/big/ima/140.jpg",
-    backImgUrl:
-      "https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest/scale-to-width-down/250?cb=20140813141013",
+    backImgUrl: "https://i.ebayimg.com/images/g/l9YAAOSweW5VX2or/s-l300.jpg",
   },
   {
     id: 11,
@@ -387,8 +365,7 @@ export default [
     power: 1,
     toughness: 2,
     imgUrl: "https://www.mtgpics.com/pics/big/ima/140.jpg",
-    backImgUrl:
-      "https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest/scale-to-width-down/250?cb=20140813141013",
+    backImgUrl: "https://i.ebayimg.com/images/g/l9YAAOSweW5VX2or/s-l300.jpg",
   },
   {
     id: 12,
@@ -404,8 +381,7 @@ export default [
     power: 1,
     toughness: 2,
     imgUrl: "https://www.mtgpics.com/pics/big/ima/140.jpg",
-    backImgUrl:
-      "https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest/scale-to-width-down/250?cb=20140813141013",
+    backImgUrl: "https://i.ebayimg.com/images/g/l9YAAOSweW5VX2or/s-l300.jpg",
   },
   {
     id: 13,
@@ -421,8 +397,7 @@ export default [
     power: 2,
     toughness: 2,
     imgUrl: "https://www.mtgpics.com/pics/big/25m/128.jpg",
-    backImgUrl:
-      "https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest/scale-to-width-down/250?cb=20140813141013",
+    backImgUrl: "https://i.ebayimg.com/images/g/l9YAAOSweW5VX2or/s-l300.jpg",
   },
   {
     id: 14,
@@ -438,8 +413,7 @@ export default [
     power: 2,
     toughness: 2,
     imgUrl: "https://www.mtgpics.com/pics/big/25m/128.jpg",
-    backImgUrl:
-      "https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest/scale-to-width-down/250?cb=20140813141013",
+    backImgUrl: "https://i.ebayimg.com/images/g/l9YAAOSweW5VX2or/s-l300.jpg",
   },
   {
     id: 15,
@@ -455,8 +429,7 @@ export default [
     power: 2,
     toughness: 2,
     imgUrl: "https://www.mtgpics.com/pics/big/25m/128.jpg",
-    backImgUrl:
-      "https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest/scale-to-width-down/250?cb=20140813141013",
+    backImgUrl: "https://i.ebayimg.com/images/g/l9YAAOSweW5VX2or/s-l300.jpg",
   },
   {
     id: 16,
@@ -472,8 +445,7 @@ export default [
     power: 2,
     toughness: 2,
     imgUrl: "https://www.mtgpics.com/pics/big/25m/128.jpg",
-    backImgUrl:
-      "https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest/scale-to-width-down/250?cb=20140813141013",
+    backImgUrl: "https://i.ebayimg.com/images/g/l9YAAOSweW5VX2or/s-l300.jpg",
   },
   {
     id: 17,
@@ -489,8 +461,7 @@ export default [
     power: 2,
     toughness: 2,
     imgUrl: "https://www.mtgpics.com/pics/big/zen/126.jpg",
-    backImgUrl:
-      "https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest/scale-to-width-down/250?cb=20140813141013",
+    backImgUrl: "https://i.ebayimg.com/images/g/l9YAAOSweW5VX2or/s-l300.jpg",
   },
   {
     id: 18,
@@ -506,8 +477,7 @@ export default [
     power: 2,
     toughness: 2,
     imgUrl: "https://www.mtgpics.com/pics/big/zen/126.jpg",
-    backImgUrl:
-      "https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest/scale-to-width-down/250?cb=20140813141013",
+    backImgUrl: "https://i.ebayimg.com/images/g/l9YAAOSweW5VX2or/s-l300.jpg",
   },
   {
     id: 19,
@@ -523,8 +493,7 @@ export default [
     power: 2,
     toughness: 2,
     imgUrl: "https://www.mtgpics.com/pics/big/zen/126.jpg",
-    backImgUrl:
-      "https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest/scale-to-width-down/250?cb=20140813141013",
+    backImgUrl: "https://i.ebayimg.com/images/g/l9YAAOSweW5VX2or/s-l300.jpg",
   },
   {
     id: 20,
@@ -540,8 +509,7 @@ export default [
     power: 2,
     toughness: 2,
     imgUrl: "https://www.mtgpics.com/pics/big/zen/126.jpg",
-    backImgUrl:
-      "https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest/scale-to-width-down/250?cb=20140813141013",
+    backImgUrl: "https://i.ebayimg.com/images/g/l9YAAOSweW5VX2or/s-l300.jpg",
   },
   {
     id: 21,
@@ -557,8 +525,7 @@ export default [
     power: 1,
     toughness: 2,
     imgUrl: "https://www.mtgpics.com/pics/big/ima/140.jpg",
-    backImgUrl:
-      "https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest/scale-to-width-down/250?cb=20140813141013",
+    backImgUrl: "https://i.ebayimg.com/images/g/l9YAAOSweW5VX2or/s-l300.jpg",
   },
   {
     id: 22,
@@ -574,8 +541,7 @@ export default [
     power: 1,
     toughness: 2,
     imgUrl: "https://www.mtgpics.com/pics/big/ima/140.jpg",
-    backImgUrl:
-      "https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest/scale-to-width-down/250?cb=20140813141013",
+    backImgUrl: "https://i.ebayimg.com/images/g/l9YAAOSweW5VX2or/s-l300.jpg",
   },
   {
     id: 23,
@@ -591,8 +557,7 @@ export default [
     power: 1,
     toughness: 2,
     imgUrl: "https://www.mtgpics.com/pics/big/ima/140.jpg",
-    backImgUrl:
-      "https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest/scale-to-width-down/250?cb=20140813141013",
+    backImgUrl: "https://i.ebayimg.com/images/g/l9YAAOSweW5VX2or/s-l300.jpg",
   },
   {
     id: 24,
@@ -608,7 +573,6 @@ export default [
     power: 1,
     toughness: 2,
     imgUrl: "https://www.mtgpics.com/pics/big/ima/140.jpg",
-    backImgUrl:
-      "https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest/scale-to-width-down/250?cb=20140813141013",
+    backImgUrl: "https://i.ebayimg.com/images/g/l9YAAOSweW5VX2or/s-l300.jpg",
   },
 ];

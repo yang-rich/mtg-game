@@ -1,22 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* border: 1px solid red; */
+}
+#root {
+  background-color: red;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
 .hand {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
-
-.board {
+.computerHand {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
-
+.board {
+  padding-top: 55px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.computerBoard {
+  margin: 0%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  transform: rotateX(180deg);
+}
+.computerCard {
+  width: 5%;
+  margin-left: 1%;
+  transition: transform 0.5s;
+  transform: rotateY(180deg);
+}
 .card {
-  width: 10%;
+  width: 5%;
   margin-left: 1%;
   transition: transform 0.5s;
 }
-
 .card:hover {
-  transform: scale(1.7);
+  transform: scale(2);
   z-index: 100;
+}
+
+.computerCard:hover {
+  z-index: 100;
+  transform: rotateX(180deg) scale(2);
+  transition: transform 1s;
+}
+.deckSpot {
+  width: 5%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.deckStack {
+  width: 100%;
+}
+.playerArea {
+  margin: 1%;
+  display: flex;
+  justify-content: flex-end;
+}
+.computerArea {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+.cardsLeft {
+  color: white;
+  font-size: 24px;
+}
+.computerHealth {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.computerHealthImage {
+  left: 150px;
+  position: absolute;
+}
+.computerHealthMana {
+  left: 140px;
+  color: red;
+  font-size: 36px;
+  font-weight: bold;
+  position: relative;
+  text-align: center;
+  z-index: 100;
+}
+.computerBackground {
+  height: 50vh;
+  background-image: url("https://wallpapercave.com/wp/abA8GhM.jpg");
+}
+.playerBackground {
+  height: 50vh;
+  background-image: url("https://wallpapercave.com/wp/XdnyO98.jpg");
+}
+.playerHealthMana {
+  color: blue;
+  font-size: 36px;
+  font-weight: bold;
+  position: relative;
+  text-align: center;
+  z-index: 100;
+  margin-bottom: 100px;
+  right: -140px;
+  bottom: -60px;
+}
+.actionMenu {
+  position: absolute;
+  right: 500px;
+  bottom: 100px;
+}
+.buttons {
+  width: 100px;
+  height: 50px;
+  font-weight: bolder;
+  color: red;
+  background-color: black;
 }

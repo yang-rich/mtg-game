@@ -1,5 +1,8 @@
 import React from "react";
 import Card from "./Card";
+import playerHealth from "../../../Images/playerHealth.png";
+import computerHealth from "../../../Images/computerHealth.png";
+import dacards from "./allCards/cards";
 import "./Styles/card.css";
 
 const Player = ({
@@ -18,7 +21,17 @@ const Player = ({
   if (!currentTurn) {
     playCard = () => {};
   }
-  const boardStuff = (
+  const computerBoardStuff = (
+    <div className="computerBoard">
+      {board.map((card) => (
+        <>
+          <Card key={card.name} />
+          <img className="computerCard" src={card.imgUrl} alt={card.name} />
+        </>
+      ))}
+    </div>
+  );
+  const playerBoardStuff = (
     <div className="board">
       {board.map((card) => (
         <>
@@ -54,7 +67,7 @@ const Player = ({
   const computerStuff = (
     <>
       {
-        <div className="hand">
+        <div className="computerHand">
           {hand.map((card, i) => (
             <>
               <Card key={card.name} />
@@ -65,47 +78,87 @@ const Player = ({
       }
     </>
   );
-  const gameplayStuff = (
+  // const computerGameplayStuff = (
+
+  const playerGameplayStuff = (
     <>
-      {health}
-      <br />
-      {mana}
-      <br />
-      {deck.length} cards left
-      <br />
-      {currentTurn && (
-        <div className="actionMenu">
-          {/* <button onClick={dealCardForPlayer}>draw</button>
-          <br /> */}
-          <button onClick={attackCard}>Attack</button>
-          <br />
-          <button onClick={playerStart}>Pass / End Turn</button>
+      <div className="playerArea">
+        <div className="playerHealth">
+          <div className="playerHealthMana">
+            {health}
+            <br />
+            {mana}
+            <br />
+          </div>
         </div>
-      )}
+        <div className="playerHealthImage">
+          <img src={playerHealth} />
+        </div>
+        {currentTurn && (
+          <div className="actionMenu">
+            {/* <button onClick={dealCardForPlayer}>draw</button>
+          <br /> */}
+            <button className="buttons" onClick={attackCard}>
+              Attack
+            </button>
+            <br />
+            <button className="buttons" onClick={playerStart}>
+              Pass / End Turn
+            </button>
+          </div>
+        )}
+        <div className="deckSpot">
+          <img className="deckStack" src={dacards[0].backImgUrl} />
+          <br />
+          <div className="cardsLeft">{deck.length} cards left</div>
+        </div>
+        <br />
+      </div>
+    </>
+  );
+  const computerGameplayStuff = (
+    <>
+      <div className="computerArea">
+        <div className="computerHealth">
+          <div className="computerHealthImage">
+            <img src={computerHealth} />
+          </div>
+          <div className="computerHealthMana">
+            {health}
+            <br />
+            {mana}
+            <br />
+          </div>
+        </div>
+        <div className="deckSpot">
+          {" "}
+          <img className="deckStack" src={dacards[0].backImgUrl} />
+          <div className="cardsLeft">{deck.length} cards left</div>
+          <br />
+        </div>
+        <br />
+      </div>
     </>
   );
 
   //separated each part of game to separate components to re-order based on positioning (player board board player)
   return isPlayer1 ? (
-    <>
-      Board:
-      {boardStuff}
+    <div className="playerBackground">
+      {playerBoardStuff}
       <br />
-      Hand:
       {playerStuff}
-      {gameplayStuff}
-    </>
+      {playerGameplayStuff}
+    </div>
   ) : (
-    <>
-      {gameplayStuff}
-      Hand:
-      <br />
-      {computerStuff}
-      <br />
-      Board:
-      <br />
-      {boardStuff}
-    </>
+    <div className="computerBackground">
+      <>
+        {computerGameplayStuff}
+        <br />
+        {computerStuff}
+        <br />
+        {computerBoardStuff}
+      </>
+    </div>
   );
 };
 
