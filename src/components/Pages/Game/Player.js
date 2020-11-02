@@ -8,11 +8,10 @@ const Player = ({
   mana,
   hand,
   board,
-  dealCardForPlayer,
   playCard,
   attackCard,
   currentTurn,
-  endPlayerTurn,
+  playerStart,
   isPlayer1,
 }) => {
   //if not your turn, disable playCard functionality by setting to empty function
@@ -76,41 +75,38 @@ const Player = ({
       <br />
       {currentTurn && (
         <div className="actionMenu">
-          <button onClick={dealCardForPlayer}>draw</button>
-          <br />
+          {/* <button onClick={dealCardForPlayer}>draw</button>
+          <br /> */}
           <button onClick={attackCard}>Attack</button>
           <br />
-          <button onClick={endPlayerTurn}>Pass / End Turn</button>
+          <button onClick={playerStart}>Pass / End Turn</button>
         </div>
       )}
     </>
   );
-  if (isPlayer1) {
-    //separated each part of game to separate components to re-order based on positioning (player board board player)
-    return (
-      <>
-        {gameplayStuff}
-        Hand:
-        <br />
-        {computerStuff}
-        <br />
-        Board:
-        <br />
-        {boardStuff}
-      </>
-    );
-  } else {
-    return (
-      <>
-        Board:
-        {boardStuff}
-        <br />
-        Hand:
-        {playerStuff}
-        {gameplayStuff}
-      </>
-    );
-  }
+
+  //separated each part of game to separate components to re-order based on positioning (player board board player)
+  return isPlayer1 ? (
+    <>
+      Board:
+      {boardStuff}
+      <br />
+      Hand:
+      {playerStuff}
+      {gameplayStuff}
+    </>
+  ) : (
+    <>
+      {gameplayStuff}
+      Hand:
+      <br />
+      {computerStuff}
+      <br />
+      Board:
+      <br />
+      {boardStuff}
+    </>
+  );
 };
 
 export default Player;

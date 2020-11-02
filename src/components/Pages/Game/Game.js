@@ -2,33 +2,36 @@ import React, { useCallback, useEffect, useState } from "react";
 import Player from "./Player";
 import dacards from "./allCards/cards";
 
+//randomize who goes first
+const turnCoinFlip = () => Math.floor(Math.random() * 2) + 1;
+
 const Game = () => {
-  // console.log(dacards);
   //set initial player and computer states
   //needed to separate into multiple useStates to be able to change specific things without triggering all useEffects that depends on player or computer
   //can separate now to depend on just the computerDeck instead of all of computer
 
-  const [computerDeck, setComputerDeck] = useState([]);
-  const [computerHealth, setComputerHealth] = useState(20);
-  const [computerMana, setComputerMana] = useState(0);
-  const [computerMaxMana, setComputerMaxMana] = useState(0);
-  const [computerHand, setComputerHand] = useState([]);
-  const [computerBoard, setComputerBoard] = useState([]);
-  const [computerIsActive, setComputerIsActive] = useState(false);
+  const [player, setPlayer] = useState({
+    deck: [],
+    health: 20,
+    mana: 1,
+    maxMana: 0,
+    hand: [],
+    board: [],
+    isActive: false,
+  });
 
-  const [playerDeck, setPlayerDeck] = useState([]);
-  const [playerHealth, setPlayerHealth] = useState(20);
-  const [playerMana, setPlayerMana] = useState(0);
-  const [playerMaxMana, setPlayerMaxMana] = useState(0);
-  const [playerHand, setPlayerHand] = useState([]);
-  const [playerBoard, setPlayerBoard] = useState([]);
-  const [playerIsActive, setPlayerIsActive] = useState(false);
+  const [computer, setComputer] = useState({
+    deck: [],
+    health: 20,
+    mana: 1,
+    maxMana: 0,
+    hand: [],
+    board: [],
+    isActive: false,
+  });
 
-  //randomize who goes first
-  const turnCoinFlip = () => Math.floor(Math.random() * 2) + 1;
   //takes coinflip and determines the starting "currentTurn" which decides which player starts
   const [currentTurn, setCurrentTurn] = useState(turnCoinFlip());
-  // console.log("turn", currentTurn);
 
   //shuffle deck function
   const shuffleDeck = (deck) => {
@@ -50,8 +53,8 @@ const Game = () => {
       newPlayerHand.push(playerCards.pop());
     }
 
-    setPlayerHand(newPlayerHand);
-    setPlayerDeck(playerCards);
+    player.hand = newPlayerHand;
+    player.deck = playerCards;
 
     let computerCards = shuffleDeck(
       dacards.filter((card) => card.element === "deck2")
@@ -61,15 +64,18 @@ const Game = () => {
       newComputerHand.push(computerCards.pop());
     }
 
-    setComputerHand(newComputerHand);
-    setComputerDeck(computerCards);
+    computer.hand = newComputerHand;
+    computer.deck = computerCards;
 
     if (currentTurn === 1) {
-      setPlayerIsActive(true);
+      player.isActive = true;
     } else {
-      setComputerIsActive(true);
+      computer.isActive = true;
     }
-  }, [currentTurn]);
+
+    setComputer({ ...computer });
+    setPlayer({ ...player });
+  }, []);
 
   // useEffect takes 2 params, the callback function and the "dependency array"
   // the array of variables the function depends on
@@ -77,40 +83,26 @@ const Game = () => {
   // if we pass something in the dependency array, the callback will run if that values has changed since the last render
   // if we pass player in the dependency array, it will check if it has changed since the previous render
 
-  console.log("render");
   //deal card
-  const dealCardForPlayer = (deck, hand, setDeck, setHand) => {
+  const dealCardForPlayer = (player) => {
     //look into coupling
-    let cardDealt = deck.pop();
-    // console.log("dealtcard", cardDealt);
-    hand.push(cardDealt);
-    setDeck(deck);
-    setHand(hand);
-    return;
+    let cardDealt = player.deck.pop();
+    player.hand.push(cardDealt);
   };
-  const playCardForPlayer = (
-    hand,
-    board,
-    mana,
-    setHand,
-    setBoard,
-    setMana,
-    cardpos
-  ) => {
+
+  const playCardForPlayer = (player, cardpos) => {
+    console.log(player);
+    console.log(cardpos);
     //structure conditions for stuff that will not allow code to run first
     //return early for conditional so we know immediately and dont have to look at rest of code
-    if (hand[cardpos].cmc > mana) {
+    if (player.hand[cardpos].cmc > player.mana) {
       alert("Not Enough Mana");
       return;
     }
-    let cardPlay = hand.splice(cardpos, 1);
-    // console.log("console log id", cardPlay[0].id);
+    let cardPlay = player.hand.splice(cardpos, 1);
     // socket.io test case
-    board.push(cardPlay[0]);
-    mana -= cardPlay[0].cmc;
-    setHand(hand);
-    setBoard(board);
-    setMana(mana);
+    player.board.push(cardPlay[0]);
+    player.mana -= cardPlay[0].cmc;
   };
   //end turn function to change actionable player
 
@@ -119,154 +111,91 @@ const Game = () => {
   //change drawTurn to 0
   //isActive used for faceup/facedown
 
-  const playerStartTurn = useCallback(
-    () => (
-      nextPlayer,
-      setNextPlayer,
-      nextPlayerMaxMana,
-      setNextPlayerMana,
-      setNextPlayerMaxMana,
-      setCurrentPlayerIsActive,
-      setNextPlayerIsActive
-    ) => {
-      dealCardForPlayer(nextPlayer, setNextPlayer);
-      setCurrentPlayerIsActive(false);
-      setNextPlayerMaxMana(nextPlayerMaxMana + 1);
-      setNextPlayerMana(nextPlayerMaxMana + 1);
-      setNextPlayerIsActive(true);
-
-      if (currentTurn === 1) {
-        setCurrentTurn(2);
-      } else {
-        setCurrentTurn(1);
-      }
-    },
-    [currentTurn]
-  );
-
+  const playerStartTurn = (nextPlayer, currentPlayer) => {
+    dealCardForPlayer(nextPlayer);
+    currentPlayer.isActive = false;
+    nextPlayer.isActive = true;
+    nextPlayer.maxMana = nextPlayer.maxMana + 1;
+    nextPlayer.mana = nextPlayer.maxMana + 1;
+    console.log("a;woehoiaweg;oawhegiew");
+    if (currentTurn === 1) {
+      setCurrentTurn(2);
+    } else {
+      setCurrentTurn(1);
+    }
+  };
   //run computer logic at the end of endPlayerTurn()
   const restartGame = () => {
     window.location.reload();
   };
-  const attackCard = useCallback(
-    () => (board, health, setHealth) => {
-      const checkWin = () => {
-        if (playerHealth <= 0) {
-          alert("Computer wins!");
-          restartGame();
-        } else if (computerHealth <= 0) {
-          alert("Player wins!");
-          restartGame();
-        }
-      };
-      //sum power on board
-      //starts with 0, adds card.power from first card, and then sets that to acc for the next iteration
-      let sum = board.reduce((acc, card) => acc + card.power, 0);
-      // let sum = 0;
-      // console.log(attackingPlayer);
-      // console.log(targetPlayer);
-      // console.log("test", attackingPlayer.board[0].power);
-      // console.log(sum);
-      checkWin();
-      setHealth(health - sum);
-    },
-    []
-  );
+  const checkWin = (player1health, computer1health) => {
+    if (player1health <= 0) {
+      alert("Computer wins!");
+      restartGame();
+    } else if (computer1health <= 0) {
+      alert("Player wins!");
+      restartGame();
+    }
+  };
+  const attackCard = (attacker, defender) => {
+    //sum power on board
+    //starts with 0, adds card.power from first card, and then sets that to acc for the next iteration
+    let sum = attacker.board.reduce((acc, card) => acc + card.power, 0);
+    console.log(sum);
+    defender.health -= sum;
+  };
+
   //separate useEffect runs when currentTurn changes (computer turn stuff)
   useEffect(() => {
+    console.log("player", player);
+    console.log("computer", computer);
     if (currentTurn === 2) {
-      playerStartTurn(
-        computerMaxMana,
-        setComputerMana,
-        setComputerMaxMana,
-        setComputerIsActive,
-        setPlayerIsActive
-      );
-      dealCardForPlayer(
-        computerDeck,
-        computerHand,
-        setComputerDeck,
-        setComputerHand
-      );
-      playCardForPlayer(
-        computerHand,
-        computerBoard,
-        computerMana,
-        setComputerHand,
-        setComputerBoard,
-        setComputerMana,
-        0
-      );
-      attackCard(computerBoard, computerHealth, setPlayerHealth);
+      // console.log("1", computer.deck);
+      playCardForPlayer(computer, 0);
+      // console.log("2", computer.deck);
+      // console.log("before");
+      // console.log("3", computer.deck);
+      attackCard(computer, player);
+      // console.log("4", computer.deck);
+      // console.log("after");
+      // console.log("5", computer.deck);
+      playerStartTurn(player, computer);
+      // console.log("6", computer.deck);
+      checkWin(player.health, computer.health);
+      // console.log("7", computer.deck);
+      setComputer({ ...computer });
+      // console.log("8", computer.deck);
+      setPlayer({ ...player });
     }
-  }, [
-    attackCard,
-    computerBoard,
-    computerDeck,
-    computerHand,
-    computerHealth,
-    computerMana,
-    computerMaxMana,
-    currentTurn,
-    playerStartTurn,
-  ]);
+  }, [currentTurn]);
 
   return (
     <div>
+      <Player {...computer} currentTurn={currentTurn === 2} isPlayer1={false} />
+      <br />
+      <br />
+      <br />
       <Player
-        dealCardForPlayer={() =>
-          dealCardForPlayer(
-            playerDeck,
-            playerHand,
-            setPlayerDeck,
-            setPlayerHand
-          )
-        }
-        playCard={(i) =>
-          playCardForPlayer(
-            playerHand,
-            playerBoard,
-            playerMana,
-            setPlayerHand,
-            setPlayerBoard,
-            setPlayerMana,
-            i
-          )
-        }
-        attackCard={() =>
-          attackCard(playerBoard, playerHealth, setPlayerHealth)
-        }
+        {...player}
+        drawCard={() => {
+          dealCardForPlayer(player);
+          setPlayer({ ...player });
+        }}
+        playCard={(i) => {
+          playCardForPlayer(player, i);
+          setPlayer({ ...player });
+        }}
+        attackCard={() => {
+          attackCard(player, computer);
+          playerStartTurn(computer, player);
+          setComputer({ ...computer });
+        }}
+        playerStart={() => {
+          playerStartTurn(computer, player);
+          setComputer({ ...computer });
+        }}
         currentTurn={currentTurn === 1}
         isPlayer1={true}
-      />
-      <br />
-      <br />
-      <br />
-      <Player
-        dealCardForPlayer={() =>
-          dealCardForPlayer(
-            computerDeck,
-            computerHand,
-            setComputerDeck,
-            setComputerHand
-          )
-        }
-        playCard={(i) =>
-          playCardForPlayer(
-            computerHand,
-            computerBoard,
-            computerMana,
-            setComputerHand,
-            setComputerBoard,
-            setComputerMana,
-            i
-          )
-        }
-        attackCard={() =>
-          attackCard(computerBoard, computerHealth, setComputerHealth)
-        }
-        currentTurn={currentTurn === 2}
-        isPlayer1={false}
       />
     </div>
   );
@@ -282,7 +211,9 @@ export default Game;
 //TO-DO LIST
 ////////////////////////////////////
 
-//card back when not your turn for hands
+//computer should attack
+//buttons dont work
+//computer logic to play cards depending on cmc
 
 ////////////////////////////////////
 //FINISHED LIST
